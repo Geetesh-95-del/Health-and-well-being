@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Health and Well-being</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /* Base styles */
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #f6f7fb;
+            color: #222;
+        }
+
+        /* Hero Section Styling - NO BLUR */
+        .hero-section {
+            background-image: url('image.png');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            z-index: 1;
+            padding: 100px 6vw 0 6vw;
+            text-align: center;
+            min-height: 85vh;
+        }
+        
+        .hero-text {
+            color: white;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        /* hero-title */
+        .hero-title {
+            font-size: 55px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            display: inline-block;
+            padding: 15px 30px;
+            background: rgba(30, 30, 30, 0.95); /* 95% opacity */
+            border-radius: 12px;
+        }
+        
+        .animate-gradient {
+            background: linear-gradient(90deg, #6ea8ff, #b187ff, #e6b0ff, #6ea8ff);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientMove 3s linear infinite;
+        }
+        @keyframes gradientMove {0%{background-position:0% 50%;}100%{background-position:100% 50%;}}
+        
+        /* UPDATED: hero-desc font size increase */
+        .hero-desc {
+            font-size: 18px; /* Increased from 17px to 18px */
+            line-height: 1.7;
+            text-align: left;
+            padding: 25px;
+            background: rgba(30, 30, 30, 0.8); 
+            border-radius: 12px;
+            margin: 25px auto 50px auto;
+            max-width: 800px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); 
+        }
+        
+        /* FEATURES SECTION FIXES */
+        .features-section-container {
+            background: #000000;
+            color: #ffffff;
+            padding-top: 40px; 
+            padding-bottom: 60px;
+        }
+
+        .features-wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, auto); 
+            gap: 36px;
+            column-gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto; 
+            width: 100%;
+            padding: 0 6vw; 
+            box-sizing: border-box;
+        }
+        
+        .feature-card {
+            background: #1e1e1e;
+            padding: 24px 20px 19px 20px;
+            border-radius: 12px; 
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            font-size: 15px;
+            text-decoration: none;
+            color: #ffffff;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            min-height: 120px;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+        }
+        .feature-card div.title {
+            font-weight: 700;
+            font-size: 18px;
+            margin: 6px 0 5px 0;
+            color: #ffffff; 
+            text-transform: capitalize;
+        }
+        .feature-card div.desc {
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 1100px) {
+            .features-wrapper {
+                grid-template-columns: repeat(2, 1fr);
+                column-gap: 40px; 
+            }
+        }
+        @media (max-width: 750px) {
+            .hero-section {
+                padding: 50px 3vw 0 3vw;
+                min-height: 60vh;
+            }
+            .hero-title {
+                font-size: 38px;
+                padding: 10px 20px;
+                background: rgba(30, 30, 30, 0.95);
+            }
+            .hero-desc {
+                font-size: 17px; /* Increased from 16px to 17px for mobile */
+                padding: 15px;
+                margin-bottom: 30px;
+            }
+            .features-section-container {
+                padding-top: 30px; 
+                padding-bottom: 40px;
+            }
+            .features-wrapper {
+                grid-template-columns: 1fr;
+                gap: 18px;
+                column-gap: 0; 
+                padding: 0 3vw;
+            }
+            .feature-card {
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="hero-section">
+            <div class="hero-text">
+                <div class="hero-title">
+                    <span class="animate-gradient">Health and well-being</span>
+                </div>
+                <div class="hero-desc">
+                    Health and well-being are essential aspects of human life. Good health is not just the absence of disease but a complete state of physical, mental, and social well-being. A healthy person is energetic, confident, and capable of performing daily activities effectively. Maintaining good health requires a balanced diet, regular exercise, adequate sleep, and proper hygiene. Equally important is mental well-being, which involves staying positive, managing stress, and maintaining emotional balance. In today’s fast-moving world, people often ignore their health due to busy schedules and unhealthy habits. However, taking small steps such as eating nutritious food, drinking enough water, meditating, and spending time with family and friends can greatly improve one’s quality of life. Social connections, kindness, and gratitude also play a vital role in improving mental health. When the body and mind work in harmony, a person feels more focused, happy, and motivated. Therefore, we must give priority to our health and well-being by adopting a healthy lifestyle and avoiding harmful habits. In the end, true wealth lies not in money or possessions, but in living a healthy and balanced life filled with peace and happiness.
+                </div>
+            </div>
+        </section>
+
+        <div class="features-section-container">
+            <div class="features-wrapper">
+                <a class="feature-card" href="managestress.html">
+                    <div class="title">manage stress</div>
+                    <div class="desc">See a color-coded AQI overview for each city so you can plan safe outings at a glance.</div>
+                </a>
+                <a class="feature-card" href="eathealthy.html">
+                    <div class="title">eat healthy</div>
+                    <div class="desc">Special tips to help children, seniors, and asthma patients protect their lungs on poor air days.</div>
+                </a>
+                <a class="feature-card" href="physicallyactive.html">
+                    <div class="title">physically active</div>
+                    <div class="desc">View your last AQI reading and air tips even when the internet drops out.</div>
+                </a>
+                <a class="feature-card" href="stopdrinkingalcoholandstopsmoking.html">
+                    <div class="title">stop drinking alcohol and stop smoking</div>
+                    <div class="desc">Choose when and how to get alerts, or mute the app during sleep and travel.</div>
+                </a>
+                <a class="feature-card" href="loseweight.html">
+                    <div class="title">lose weight</div>
+                    <div class="desc">Find AQI for new cities in seconds and save favorites for fast updates again.</div>
+                </a>
+                <a class="feature-card" href="Getplentyofsleep.html">
+                    <div class="title">Get plenty of sleep</div>
+                    <div class="desc">Explore Airolyn’s features, commitment to accuracy, and our goal to deliver clean, actionable air quality info to everyone.</div>
+                </a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

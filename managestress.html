@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Manage Stress</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /* Detail Page Base Styles */
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #000000;
+            color: #ffffff;
+            min-height: 100vh;
+            position: relative; 
+        }
+
+        /* Home Button Styling */
+        .home-link {
+            position: absolute;
+            top: 25px;
+            right: 40px;
+            z-index: 100;
+            display: block;
+            width: 40px; 
+            height: 40px; 
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .home-link:hover {
+            transform: scale(1.1);
+        }
+
+        .home-link img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.4));
+        }
+        
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 6vw;
+        }
+
+        /* Heading Style (Animated Gradient) - Unique Colors */
+        .page-title {
+            font-size: 55px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-align: center;
+            text-transform: capitalize;
+        }
+        .animate-gradient {
+            /* GRADIENT 1: Red/Orange Theme (4 colors) */
+            background: linear-gradient(90deg, #ff5f6d, #ffc371, #f5a623, #ff5f6d); 
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientMove 3s linear infinite;
+        }
+        @keyframes gradientMove {0%{background-position:0% 50%;}100%{background-position:100% 50%;}}
+
+        /* Two-Column Layout */
+        .detail-section {
+            display: flex;
+            align-items: flex-start; /* Align items to the top */
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+
+        /* Image and Text Blocks */
+        .text-block, .image-block {
+            flex: 1;
+            min-width: 45%;
+        }
+        /* UPDATED: Image block and image styling for better filling */
+        .image-block {
+            /* We need the image block to be able to dictate height for the image */
+            display: flex; /* Make it a flex container */
+            align-items: stretch; /* Stretch children vertically */
+            min-height: 250px; /* Ensure a minimum height for the image block */
+        }
+        .image-block img {
+            max-width: 100%;
+            width: 100%; /* Make image fill the width */
+            height: 100%; /* Make image fill the height of its parent (.image-block) */
+            object-fit: cover; /* Cover the area, cropping if necessary to fill */
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Brief Text Styling */
+        .brief-text {
+            background: #222222;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            min-height: 150px; /* Ensure a minimum height for the text block too, for better alignment */
+            display: flex; /* Allow content to distribute vertically if needed */
+            flex-direction: column;
+            justify-content: center; /* Center content vertically if space allows */
+        }
+        .brief-text h2 {
+            font-size: 28px;
+            margin: 0 0 10px 0;
+            font-weight: 600;
+        }
+        .brief-text p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        /* Long Paragraph Styling */
+        .long-paragraph {
+            font-size: 16px;
+            line-height: 1.8;
+            padding-top: 15px;
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 850px) {
+            .page-title {
+                font-size: 36px;
+                margin-bottom: 30px;
+                padding-top: 50px; 
+            }
+            .detail-section {
+                flex-direction: column;
+                gap: 30px;
+            }
+            .text-block, .image-block {
+                min-width: 100%;
+            }
+            .image-block {
+                min-height: 200px; /* Adjusted min-height for mobile */
+            }
+            .brief-text {
+                min-height: unset; /* Remove min-height on mobile if it causes issues */
+            }
+            .home-link {
+                top: 20px;
+                right: 20px;
+                width: 35px;
+                height: 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="home-link">
+        <img src="home.png" alt="Home">
+    </a> 
+
+    <main class="content-wrapper">
+        <h1 class="page-title">
+            <span class="animate-gradient">Manage stress</span>
+        </h1>
+
+        <div class="detail-section">
+            <div class="text-block">
+                <div class="brief-text">
+                    <h2>Manage Stress</h2>
+                    <p>
+                        Managing stress involves staying calm, taking breaks, and focusing on positive thoughts. Regular exercise, meditation, and good sleep help maintain balance and improve both mental and physical well-being.
+                    </p>
+                </div>
+                
+                <div class="long-paragraph">
+                    Managing stress is vital for mental and physical well-being. Excessive stress can harm health, so identifying causes and addressing them calmly is the first step. **Practicing relaxation techniques** like deep breathing, meditation, or yoga helps calm the mind. **Regular exercise** is a powerful tool for reducing tension and boosting mood. Maintaining a balanced diet and ensuring adequate sleep are equally crucial for mental stability. Time management prevents last-minute pressure, promoting a sense of control. Sharing feelings with loved ones provides essential emotional support, and engaging in hobbies can relieve mental strain. Overall, stress management is about maintaining a healthy lifestyle and staying positive even in difficult situations.
+                </div>
+            </div>
+
+            <div class="image-block">
+                <img src="managestress.png" alt="A visual representation of managing stress">
+            </div>
+        </div>
+    </main>
+</body>
+</html>

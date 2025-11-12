@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Physically Active</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /* Detail Page Base Styles */
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #000000;
+            color: #ffffff;
+            min-height: 100vh;
+            position: relative; 
+        }
+
+        /* Home Button Styling */
+        .home-link {
+            position: absolute;
+            top: 25px;
+            right: 40px;
+            z-index: 100;
+            display: block;
+            width: 40px; 
+            height: 40px; 
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .home-link:hover {
+            transform: scale(1.1);
+        }
+
+        .home-link img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.4));
+        }
+        
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 6vw;
+        }
+
+        /* Heading Style (Animated Gradient) - Unique Colors */
+        .page-title {
+            font-size: 55px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-align: center;
+            text-transform: capitalize;
+        }
+        .animate-gradient {
+            /* GRADIENT 3: Gold/Yellow Theme (4 colors) */
+            background: linear-gradient(90deg, #FFD700, #FFA500, #FF4500, #FFD700);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientMove 3s linear infinite;
+        }
+        @keyframes gradientMove {0%{background-position:0% 50%;}100%{background-position:100% 50%;}}
+
+        /* Two-Column Layout */
+        .detail-section {
+            display: flex;
+            align-items: flex-start;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+
+        /* Image and Text Blocks */
+        .text-block, .image-block {
+            flex: 1;
+            min-width: 45%;
+        }
+        .image-block img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Brief Text Styling */
+        .brief-text {
+            background: #222222;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+        .brief-text h2 {
+            font-size: 28px;
+            margin: 0 0 10px 0;
+            font-weight: 600;
+        }
+        .brief-text p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        /* Long Paragraph Styling */
+        .long-paragraph {
+            font-size: 16px;
+            line-height: 1.8;
+            padding-top: 15px;
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 850px) {
+            .page-title {
+                font-size: 36px;
+                margin-bottom: 30px;
+                padding-top: 50px;
+            }
+            .detail-section {
+                flex-direction: column;
+                gap: 30px;
+            }
+            .text-block, .image-block {
+                min-width: 100%;
+            }
+            .home-link {
+                top: 20px;
+                right: 20px;
+                width: 35px;
+                height: 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="home-link">
+        <img src="home.png" alt="Home">
+    </a> 
+    <main class="content-wrapper">
+        <h1 class="page-title">
+            <span class="animate-gradient">Physically active</span>
+        </h1>
+
+        <div class="detail-section">
+            <div class="text-block">
+                <div class="brief-text">
+                    <h2>Physically Active</h2>
+                    <p>
+                        Being physically active isn't just about intense workouts; it's about moving regularly throughout the day. This strengthens your heart, improves flexibility, boosts mood, and significantly lowers the risk of lifestyle diseases.
+                    </p>
+                </div>
+                
+                <div class="long-paragraph">
+                    Regular physical activity is indispensable for a healthy life. It contributes to weight management, strengthens bones and muscles, and improves the body's ability to use oxygen efficiently. Exercise acts as a powerful stress reliever, releasing endorphins that enhance feelings of well-being. It is recommended to aim for a mix of aerobic activities, like brisk walking or swimming, and strength training. Even small changes, such as taking the stairs or standing while working, contribute positively. Consistency is key; integrating movement that you enjoy ensures long-term adherence. By staying active, you enhance your physical health and gain mental clarity and improved sleep quality.
+                </div>
+            </div>
+
+            <div class="image-block">
+                <img src="physicallyactive.png" alt="A visual representation of physical activity">
+            </div>
+        </div>
+    </main>
+</body>
+</html>

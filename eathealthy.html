@@ -9,10 +9,20 @@
         body {
             margin: 0;
             font-family: 'Inter', sans-serif;
-            background: #000000;
+            /* MODIFIED: Background to use the gradient colors from the title */
+            background: linear-gradient(90deg, #581845, #FFD700, #708090); 
+            background-size: 400% 400%;
+            animation: gradientMoveSlow 10s ease infinite alternate;
             color: #ffffff;
             min-height: 100vh;
             position: relative; 
+        }
+
+        /* New subtle animation for body background */
+        @keyframes gradientMoveSlow {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
         }
 
         /* Home Button Styling */
@@ -44,24 +54,15 @@
             padding: 40px 6vw;
         }
 
-        /* Heading Style (Animated Gradient) - Unique Colors */
+        /* Heading Style */
         .page-title {
             font-size: 55px;
             font-weight: 700;
             margin-bottom: 40px;
             text-align: center;
             text-transform: capitalize;
+            color: white; 
         }
-        .animate-gradient {
-            /* UPDATED GRADIENT: Dark Red, Yellow, Grey-Blue (4 colors) */
-            background: linear-gradient(90deg, #581845, #FFD700, #708090, #581845);
-            background-size: 400% 400%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradientMove 3s linear infinite;
-        }
-        @keyframes gradientMove {0%{background-position:0% 50%;}100%{background-position:100% 50%;}}
 
         /* Two-Column Layout */
         .detail-section {
@@ -77,28 +78,32 @@
             min-width: 45%;
         }
         
-        /* Image Filling Fixes */
+        /* Image Filling Fixes and Dynamic Border/Shadow */
         .image-block {
             display: flex;
             align-items: stretch;
             min-height: 250px;
+            border: 2px solid rgba(0, 0, 0, 0.2); 
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); 
+            border-radius: 15px;
+            overflow: hidden;
         }
         .image-block img {
             max-width: 100%;
             width: 100%;
-            height: 100%;
-            object-fit: cover; /* Crucial for filling the space */
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            height: 100%; 
+            object-fit: cover;
+            border-radius: 15px; 
+            box-shadow: none;
         }
 
-        /* Brief Text Styling */
+        /* Brief Text Styling - MODIFIED FOR 75% TRANSPARENCY */
         .brief-text {
-            background: #222222;
+            background: rgba(34, 34, 34, 0.75); 
             padding: 30px;
             border-radius: 15px;
             margin-bottom: 30px;
-            min-height: 150px; /* For vertical balance */
+            min-height: 150px;
             display: flex; 
             flex-direction: column;
             justify-content: center;
@@ -153,7 +158,7 @@
     </a> 
     <main class="content-wrapper">
         <h1 class="page-title">
-            <span class="animate-gradient">Eat healthy</span>
+            <span>Eat healthy</span>
         </h1>
 
         <div class="detail-section">

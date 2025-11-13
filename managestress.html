@@ -9,10 +9,20 @@
         body {
             margin: 0;
             font-family: 'Inter', sans-serif;
-            background: #000000;
+            /* MODIFIED: Background to use the gradient colors from the title */
+            background: linear-gradient(90deg, #ff5f6d, #ffc371, #f5a623); 
+            background-size: 400% 400%;
+            animation: gradientMoveSlow 10s ease infinite alternate;
             color: #ffffff;
             min-height: 100vh;
             position: relative; 
+        }
+
+        /* New subtle animation for body background */
+        @keyframes gradientMoveSlow {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
         }
 
         /* Home Button Styling */
@@ -44,29 +54,20 @@
             padding: 40px 6vw;
         }
 
-        /* Heading Style (Animated Gradient) - Unique Colors */
+        /* Heading Style */
         .page-title {
             font-size: 55px;
             font-weight: 700;
             margin-bottom: 40px;
             text-align: center;
             text-transform: capitalize;
+            color: white; 
         }
-        .animate-gradient {
-            /* GRADIENT 1: Red/Orange Theme (4 colors) */
-            background: linear-gradient(90deg, #ff5f6d, #ffc371, #f5a623, #ff5f6d); 
-            background-size: 400% 400%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradientMove 3s linear infinite;
-        }
-        @keyframes gradientMove {0%{background-position:0% 50%;}100%{background-position:100% 50%;}}
-
+        
         /* Two-Column Layout */
         .detail-section {
             display: flex;
-            align-items: flex-start; /* Align items to the top */
+            align-items: flex-start; 
             gap: 50px;
             margin-bottom: 40px;
         }
@@ -76,32 +77,37 @@
             flex: 1;
             min-width: 45%;
         }
-        /* UPDATED: Image block and image styling for better filling */
+        
+        /* Image Filling Fixes and Dynamic Border/Shadow */
         .image-block {
-            /* We need the image block to be able to dictate height for the image */
-            display: flex; /* Make it a flex container */
-            align-items: stretch; /* Stretch children vertically */
-            min-height: 250px; /* Ensure a minimum height for the image block */
+            display: flex; 
+            align-items: stretch; 
+            min-height: 250px; 
+            border: 2px solid rgba(0, 0, 0, 0.2); 
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); 
+            border-radius: 15px;
+            overflow: hidden; 
         }
         .image-block img {
             max-width: 100%;
-            width: 100%; /* Make image fill the width */
-            height: 100%; /* Make image fill the height of its parent (.image-block) */
-            object-fit: cover; /* Cover the area, cropping if necessary to fill */
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            border-radius: 15px; 
+            box-shadow: none; 
         }
 
-        /* Brief Text Styling */
+        /* Brief Text Styling - MODIFIED FOR MORE TRANSPARENCY (0.75 opacity) */
         .brief-text {
-            background: #222222;
+            /* Changed from 85% opaque to 75% opaque */
+            background: rgba(34, 34, 34, 0.75); 
             padding: 30px;
             border-radius: 15px;
             margin-bottom: 30px;
-            min-height: 150px; /* Ensure a minimum height for the text block too, for better alignment */
-            display: flex; /* Allow content to distribute vertically if needed */
+            min-height: 150px; 
+            display: flex; 
             flex-direction: column;
-            justify-content: center; /* Center content vertically if space allows */
+            justify-content: center; 
         }
         .brief-text h2 {
             font-size: 28px;
@@ -136,10 +142,10 @@
                 min-width: 100%;
             }
             .image-block {
-                min-height: 200px; /* Adjusted min-height for mobile */
+                min-height: 200px; 
             }
             .brief-text {
-                min-height: unset; /* Remove min-height on mobile if it causes issues */
+                min-height: unset; 
             }
             .home-link {
                 top: 20px;
@@ -157,7 +163,7 @@
 
     <main class="content-wrapper">
         <h1 class="page-title">
-            <span class="animate-gradient">Manage stress</span>
+            <span>Manage stress</span>
         </h1>
 
         <div class="detail-section">

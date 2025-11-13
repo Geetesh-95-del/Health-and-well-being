@@ -5,7 +5,7 @@
     <title>Health and Well-being</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        /* ADDED: Ensures the page takes up 100% of the viewport height (full screen view) */
+        /* Ensures the page takes up 100% of the viewport height */
         html, body {
             height: 100%;
             min-height: 100%;
@@ -17,26 +17,6 @@
             font-family: 'Inter', sans-serif;
             background: #f6f7fb;
             color: #222;
-        }
-
-        /* Fullscreen Button Style */
-        .fullscreen-btn {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            padding: 8px 15px;
-            font-size: 14px;
-            font-weight: 600;
-            color: white;
-            background: rgba(30, 30, 30, 0.9);
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            z-index: 1000; /* Ensure it's above everything */
-            transition: background 0.2s;
-        }
-        .fullscreen-btn:hover {
-            background: rgba(45, 45, 45, 1.0);
         }
 
         /* Hero Section Styling - NO BLUR */
@@ -179,17 +159,11 @@
             .feature-card {
                 max-width: none;
             }
-            .fullscreen-btn {
-                top: 15px;
-                left: 15px;
-            }
         }
     </style>
 </head>
 <body>
     <main>
-        <button class="fullscreen-btn" onclick="toggleFullScreen()">[  ]</button>
-        
         <section class="hero-section">
             <div class="hero-text">
                 <div class="hero-title">
@@ -230,18 +204,5 @@
             </div>
         </div>
     </main>
-    <script>
-        function toggleFullScreen() {
-            if (!document.fullscreenElement) {
-                document.documentElement.requestFullscreen().catch(err => {
-                    console.error(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
-                });
-            } else {
-                if (document.exitFullscreen) {
-                    document.exitFullscreen();
-                }
-            }
-        }
-    </script>
 </body>
 </html>
